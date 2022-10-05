@@ -1,0 +1,35 @@
+@extends('Dashboard')
+@section('content')
+
+
+<h3>Data Guru</h3>
+ 
+<a href="#"> + Tambah Guru Baru</a>
+
+<br/>
+<br/>
+
+<table border="1">
+    <tr>
+        <th>NIP</th>
+        <th>Nama</th>
+        <th>Tanggal Masuk</th>
+        <th>Opsi</th>
+    </tr>
+    @foreach($guru as $Get)
+    <tr>
+        <td>{{ $Get->nip }}</td>
+        <td>{{ $Get->nama }}</td>
+        <td>{{ $Get->tgl_masuk }}</td>
+        <td>
+            <a href="/guru/edit/{{ $Get->kd_guru }}">Edit</a>
+            |
+            <a href="/guru/hapus/{{ $Get->kd_guru }}">Hapus</a>
+        </td>
+    </tr>
+    @endforeach
+</table>
+
+
+    
+@endsection
